@@ -1,0 +1,10 @@
+﻿,document_type,document_name,related_paragraph,variable,localisation
+0,GP Letter,TRIAL GP Letter v1.docx,<<letter_date>>,<<letter_date>>,2024-06-19
+1,GP Letter,TRIAL GP Letter v1.docx,"Dear <<dr_name>>,",<<dr_name>>,Dr. Smith
+2,GP Letter,TRIAL GP Letter v1.docx,"We are writing to inform you that your patient, <<patient_name>>, has been enrolled in a clinical trial aimed at optimizing Metformin treatment for better glycaemic control in Type 2 Diabetes.",<<patient_name>>,Jane Doe
+3,GP Letter,TRIAL GP Letter v1.docx,"In case of any adverse events, please contact <<PI_name>> at <<site_name>>.",<<site_name>>,Central Medical Clinic
+4,GP Letter,TRIAL GP Letter v1.docx,"In case of any adverse events, please contact <<PI_name>> at <<site_name>>.",<<PI_name>>,Dr. Emily Turner
+5,GP Letter,TRIAL GP Letter v1.docx,Phone: <<PI_phone>>,<<PI_phone>>,123-456-7890
+6,GP Letter,TRIAL GP Letter v1.docx,Email: <<PI_email>>,<<PI_email>>,eturner@centralclinic.com
+7,GP Letter,TRIAL GP Letter v1.docx,"<<PI_name>>, <<site_name>>",<<site_name>>,Central Medical Clinic
+8,GP Letter,TRIAL GP Letter v1.docx,"<<PI_name>>, <<site_name>>",<<PI_name>>,Dr. Emily Turner
