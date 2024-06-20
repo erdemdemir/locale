@@ -35,14 +35,16 @@ html_template = """
 with open("streamlit/coordination.py", "r") as file:
     coordination_content = file.read()
 coordination_html = html_template.replace("<<app_py>>", "Coordination.py")
-coordination_html = html_template.replace("<<app_py_content>>", coordination_content)
+coordination_html = coordination_html.replace(
+    "<<app_py_content>>", coordination_content
+)
 with open("stlite/coordination.html", "w") as file:
     file.write(coordination_html)
 
 with open("streamlit/site.py", "r") as file:
     site_content = file.read()
 site_html = html_template.replace("<<app_py>>", "Site.py")
-site_html = html_template.replace("<<app_py_content>>", site_content)
+site_html = site_html.replace("<<app_py_content>>", site_content)
 with open("stlite/site.html", "w") as file:
     file.write(site_html)
 

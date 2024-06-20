@@ -17,9 +17,9 @@
         stlite.mount(
             {
                 requirements: ["pandas", "python-docx", "pillow", "imagehash"], // Packages to install
-                entrypoint: "<<app_py>>", // The target file of the `streamlit run` command
+                entrypoint: "Site.py", // The target file of the `streamlit run` command
                 files: {
-                    "<<app_py>>": `
+                    "Site.py": `
 ### IMPORTS ###
 import streamlit as st
 import zipfile
@@ -35,9 +35,6 @@ import base64
 import shutil
 from PIL import Image
 import imagehash
-import logging
-
-logger = logging.getLogger(__name__)
 
 ### FUNCTION DEFINITIONS ###
 
@@ -137,60 +134,44 @@ def find_matching_image(images, placeholder_image_bytes):
 
 
 # Function to replace a specified image in the docx file with a new image
-#! Includes multiple `st.write` statements for debugging
 def replace_image(doc_bytes, placeholder_image_bytes, new_image_bytes):
     """Replace a specified image in the docx file with a new image."""
     temp_dir = "temp_docx"
-    # st.write("Creating temporary directory for docx extraction:", temp_dir)
     if os.path.exists(temp_dir):
-        # st.write("Temporary directory already exists. Removing:", temp_dir)
         shutil.rmtree(temp_dir)
     os.makedirs(temp_dir)
-    # st.write("Temporary directory created:", temp_dir)
 
     with zipfile.ZipFile(io.BytesIO(doc_bytes), "r") as zip_ref:
-        # st.write("Extracting docx contents...")
         zip_ref.extractall(temp_dir)
 
     media_dir = os.path.join(temp_dir, "word", "media")
-    # st.write("Media directory path:", media_dir)
     if not os.path.exists(media_dir):
-        # st.write("Media directory does not exist:", media_dir)
         raise FileNotFoundError(f"{media_dir} does not exist")
 
     placeholder_hash = imagehash.average_hash(
         Image.open(io.BytesIO(placeholder_image_bytes))
     )
-    # st.write("Placeholder image hash:", placeholder_hash)
 
     replaced = False
     for image_name in os.listdir(media_dir):
         image_path = os.path.join(media_dir, image_name)
-        # st.write("Checking image file:", image_path)
         with open(image_path, "rb") as img_file:
             img = Image.open(img_file)
             img_hash = imagehash.average_hash(img)
-            # st.write("Current image hash:", img_hash)
             if img_hash == placeholder_hash:
-                # st.write("Placeholder image found:", image_path)
 
                 # Check the new image bytes before writing
-                # st.write("Length of new image bytes:", len(new_image_bytes))
                 if len(new_image_bytes) == 0:
-                    # st.write("New image bytes are empty, skipping replacement.")
                     break
 
                 try:
                     # Attempt to open new image to verify it's valid
                     new_img = Image.open(io.BytesIO(new_image_bytes))
-                    # st.write("New image format:", new_img.format)
                 except Exception as e:
-                    # st.write("Error opening new image:", e)
                     break
 
                 with open(image_path, "wb") as new_img_file:
                     new_img_file.write(new_image_bytes)
-                    # st.write("Image replaced with new image data.")
                 replaced = True
                 break
 

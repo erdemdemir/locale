@@ -17,9 +17,9 @@
         stlite.mount(
             {
                 requirements: ["pandas", "python-docx", "pillow", "imagehash"], // Packages to install
-                entrypoint: "<<app_py>>", // The target file of the `streamlit run` command
+                entrypoint: "Coordination.py", // The target file of the `streamlit run` command
                 files: {
-                    "<<app_py>>": `
+                    "Coordination.py": `
 ### IMPORTS ###
 import streamlit as st
 import pandas as pd
