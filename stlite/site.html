@@ -186,10 +186,8 @@ def replace_image(doc_bytes, placeholder_image_bytes, new_image_bytes):
                 arcname = os.path.relpath(file_path, temp_dir)
                 docx_zip.write(file_path, arcname)
     shutil.rmtree(temp_dir)
-    # st.write("Temporary files cleaned up.")
 
     new_docx_io.seek(0)
-    # st.write("Returning new docx bytes.")
     return new_docx_io.getvalue()
 
 
