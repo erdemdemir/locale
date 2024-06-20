@@ -3,12 +3,14 @@
 *LOcalisation of the Clinical triAls template fiLes with site-specific valuEs and site logo*
 *v0.1.0*
 
-*LOCALE* is a collection of tools to help coordination teams and participating sites to automate the updates needed for various templates and documents. You can either use the tools running the `python` files in the `streamlit` folder or use the same tools in the browser running the `html` counterpart in the `stlite` folder.
+*LOCALE* is a collection of tools to help coordination teams and participating sites to automate the updates needed for various templates and documents. You can either run the `python` files in the `streamlit` folder or use the same tools in the browser running the `html` counterpart in the `stlite` folder. You can find the links below.
 
 ## Current tools
 
-* Coordination tool 
-* Participating site tool
+| Name of the tool | Browser-Based App                                            | View python code                                             | View step-by-step instructions                               |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Coordination     | [Coordination stlite](https://erdemdemir.github.io/locale/stlite/coordination.html) | [coordination.py](https://github.com/erdemdemir/locale/blob/main/streamlit/coordination.py) | [Step by step instructions for the Coordination tool](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Coordination-tool) |
+| Site             | [Site stlite](https://erdemdemir.github.io/locale/stlite/site.html) | [site.py](https://github.com/erdemdemir/locale/blob/main/streamlit/site.py) | [Step by step instructions for the Site tool](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Site-tool) |
 
 ## How does it work?
 
