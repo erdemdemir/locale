@@ -63,8 +63,14 @@ if "variables_df" not in st.session_state:
 
 ### MAIN / HEADING ###
 
-with st.sidebar:
-    if st.button("🔄 Reset 'Coordination' tool"):
+st.title("🌐 LOCALE - Coordination")
+col_caption, col_reset = st.columns([4, 1])  # Adjust column ratios as needed
+with col_caption:
+    st.caption(
+        "LOcalisation of the Clinical triAls template fiLes with site-specific valuEs and site logo"
+    )
+with col_reset:
+    if st.button("🔄 Reset tool"):
         st.session_state.coord = "zip"
         st.session_state.docx_zip = None
         st.session_state.variables_df = pd.DataFrame(
@@ -72,10 +78,6 @@ with st.sidebar:
         )
         st.rerun()
 
-st.title("🌐 LOCALE - Coordination")
-st.caption(
-    "LOcalisation of the Clinical triAls template fiLes with site-specific valuEs and site logo"
-)
 bosh = st.empty()
 
 ### MAIN / ZIP FILE ###
@@ -88,13 +90,15 @@ if st.session_state.coord == "zip":
 You can use LOCALE to facilitate participating site localisation of the clinical trials template files. You must prepare the following in a zip package for the participating sites:
 
 1. Template files: in docx format
-2. Placeholder logo: LOCALE finds and replaces the placeholder logo in the template files and for that reason you must add a placeholder logo to all template files. See example files :red[here].
-3. 'localisation.csv' file: a CSV file that includes all documents and all variables in each document. You can find more about it and download the template following this link: :red[link here]
+2. Placeholder logo: LOCALE finds and replaces the placeholder logo in the template files and for that reason you must add a placeholder logo to all template files. See example files [here](https://github.com/erdemdemir/locale/tree/main/example_files).
+3. 'localisation.csv' file: a CSV file that includes all documents and all variables in each document. You can find more about it and download the template following this [link](https://github.com/erdemdemir/locale/tree/main/template_files).
 
 You have 2 options to prepare the 'localisation.csv' for the sites:
 
 1. You can use the template and examples provided in the link above to manually prepare the 'localisation.csv' file.
 2. If your template files follow a pattern for variables, e.g. using chevrons to mark them as in <<Hospital name>>, <<PI name>> etc., you can use the web app below to create the 'localisation.csv' automatically to save time.
+
+If you would need more information, you can view the [step-by-step instructions](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Coordination-tool).
             """
         )
         uploaded_docx = st.file_uploader(
@@ -165,7 +169,7 @@ if st.session_state.coord == "data_editor":
                 ),
             },
         )
-        if st.button("Save localisation.csv ⬇️"):
+        if st.button("Save localisation.csv ➡️"):
             edited_df.to_csv("localisation.csv", index=False)
             st.success("localisation.csv saved successfully 🎉")
             st.download_button(

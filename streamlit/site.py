@@ -258,9 +258,14 @@ if "localisation_df_final" not in st.session_state:
 
 
 ### MAIN / HEADING ###
-
-with st.sidebar:
-    if st.button("🔄 Reset 'Site' tool"):
+st.title("🌐 LOCALE - Site")
+col_caption, col_reset = st.columns([4, 1])  # Adjust column ratios as needed
+with col_caption:
+    st.caption(
+        "LOcalisation of the Clinical triAls template fiLes with site-specific valuEs and site logo"
+    )
+with col_reset:
+    if st.button("🔄 Reset tool"):
         st.session_state.step = "pack"
         st.session_state.zip_contents = None
         st.session_state.placeholder_logo_name = None
@@ -273,11 +278,6 @@ with st.sidebar:
         st.session_state.localisation_df_final = None
         st.rerun()
 
-
-st.title("🌐 LOCALE - Site")
-st.caption(
-    "LOcalisation of the Clinical triAls template fiLes with site-specific valuEs and site logo"
-)
 bosh = st.empty()
 
 ### MAIN / LOCALISATION PACK ###
@@ -300,7 +300,7 @@ You will be following these steps:
 4. Replacing the placeholder logo in the documents with your site’s logo
 5. Finalising the data entry and downloading the localised documents
 
-If you want more information before using, you can click :red[HERE] to view the  step-by-step instructions.
+If you want more information before using, you can click [here](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Site-tool) to view the  step-by-step instructions.
         """
         )
         uploaded_package = st.file_uploader(
@@ -428,7 +428,7 @@ if st.session_state.step == "previous":
     previous = bosh.container(border=True)
     with previous:
         st.markdown(
-            "If you have previously used LOCALE for this trial, such as for a past amendment, you can upload the 'localised.csv' file here. Previously entered values will be imported to populate the matching fields, which in turn will save you some typing. This 'localised.csv' file can be found in the zip package you downloaded at the end of that previous localisation alongside with the localised docx files."
+            "If you have previously used LOCALE for this trial, such as for a past amendment, you can upload the 'localisation.csv' file from previous attempt here. Previously entered values will be imported to populate the matching fields, which in turn will save you some typing. This 'localisation.csv' file can be found in the zip package you downloaded at the end of that previous localisation alongside with the localised docx files."
         )
 
         # Load the localisation_df ready to update with previous values
@@ -510,8 +510,6 @@ The data editor has the following columns:
 If you made significant edits, I would strongly suggest to download the csv file before finalising data entry and move to the next stage. 
         """
         )
-        with st.expander("👉 Click here to view help about icons"):
-            st.image("img/data_editor_icons.png", use_column_width=True)
 
         # New dataframe with all localisation information
         localisation_df_final = st.data_editor(
