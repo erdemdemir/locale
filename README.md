@@ -7,10 +7,10 @@
 
 ## Current tools
 
-| Name of the tool | Browser-Based App                                            | View python code                                             | View step-by-step instructions                               |
-| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Coordination     | [Coordination stlite](https://erdemdemir.github.io/locale/stlite/coordination.html) | [coordination.py](https://github.com/erdemdemir/locale/blob/main/streamlit/coordination.py) | [Step by step instructions for the Coordination tool](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Coordination-tool) |
-| Site             | [Site stlite](https://erdemdemir.github.io/locale/stlite/site.html) | [site.py](https://github.com/erdemdemir/locale/blob/main/streamlit/site.py) | [Step by step instructions for the Site tool](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Site-tool) |
+| Name of the tool | Browser-Based App                                            | View python code                                             | View step-by-step instructions                               | Example files                                                |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Coordination     | [Coordination stlite](https://erdemdemir.github.io/locale/stlite/coordination.html) | [coordination.py](https://github.com/erdemdemir/locale/blob/main/streamlit/coordination.py) | [Step by step instructions for the Coordination tool](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Coordination-tool) | [docx_files.zip](https://erdemdemir.github.io/locale/example_files/docx_files.zip) |
+| Site             | [Site stlite](https://erdemdemir.github.io/locale/stlite/site.html) | [site.py](https://github.com/erdemdemir/locale/blob/main/streamlit/site.py) | [Step by step instructions for the Site tool](https://github.com/erdemdemir/locale/wiki/Step-by-step-instructions-for-the-Site-tool) | [site_example_files.zip](https://erdemdemir.github.io/locale/example_files/site_example_files.zip) |
 
 ## How does it work?
 
